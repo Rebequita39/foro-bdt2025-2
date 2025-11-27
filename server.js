@@ -25,14 +25,14 @@ app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', message: 'Servidor funcionando correctamente' });
 });
 
-// Importar rutas (cuando las crees)
-// const authRoutes = require('./routes/authRoutes');
-// cst userRoutes = require('./routes/userRoutes');
+// Importar rutas
+const authRoutes = require('./routes/authRoutes');
+// const userRoutes = require('./routes/userRoutes');
 // const boardRoutes = require('./routes/boardRoutes');
 // const postRoutes = require('./routes/postRoutes');
 
 // Usar rutas
-// app.use('/api/auth', authRoutes);
+app.use('/api/auth', authRoutes);
 // app.use('/api/users', userRoutes);
 // app.use('/api/boards', boardRoutes);
 // app.use('/api/posts', postRoutes);
