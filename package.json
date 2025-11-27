@@ -1,21 +1,29 @@
 {
   "name": "forum",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
+  "description": "Foro estilo retro 90s",
+  "main": "server.js",
+"scripts": {
+  "start": "nodemon server.js",
+  "test": "echo \"Error: no test specified\" && exit 1"
+},
+  "keywords": [
+    "forum",
+    "retro",
+    "90s"
+  ],
+  "author": "Rebequita39",
   "license": "ISC",
   "dependencies": {
-    "bcrypt": "^6.0.0",
-    "dotenv": "^17.2.3",
-    "express": "^5.1.0",
-    "multer": "^2.0.2",
-    "mysql2": "^3.15.3",
-    "nodemon": "^3.1.11",
+    "bcrypt": "^5.1.1",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^1.4.5-lts.1",
+    "mysql2": "^3.11.5",
     "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
   }
 }
