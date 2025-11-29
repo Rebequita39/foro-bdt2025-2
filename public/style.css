@@ -71,7 +71,7 @@ marquee {
   position: absolute;
   z-index: 9999;
   pointer-events: none;
-  animation: float 3s ease-in-out infinite;
+
 }
 
   .container {

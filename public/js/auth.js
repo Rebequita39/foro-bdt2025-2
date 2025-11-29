@@ -38,13 +38,13 @@ document.addEventListener('DOMContentLoaded', () => {
             
             if (value.length < 3) {
                 small.style.color = 'red';
-                small.textContent = 'Too short (min 3 chars)';
+                small.textContent = 'Muy corto (min 3 chars)';
             } else if (value.length > 20) {
                 small.style.color = 'red';
-                small.textContent = 'Too long (max 20 chars)';
+                small.textContent = 'Muy largo (max 20 chars)';
             } else {
                 small.style.color = 'green';
-                small.textContent = '✓ Valid username';
+                small.textContent = 'Usuario disponible';
             }
         });
     }
@@ -58,10 +58,10 @@ document.addEventListener('DOMContentLoaded', () => {
             
             if (value.length < 6) {
                 small.style.color = 'red';
-                small.textContent = `Too short (${value.length}/6 chars)`;
+                small.textContent = `Contraseña demasiado corta! (${value.length}/6 chars)`;
             } else {
                 small.style.color = 'green';
-                small.textContent = '✓ Strong password';
+                small.textContent = 'Contraseña fuerte';
             }
         });
     }
@@ -110,18 +110,18 @@ document.getElementById('login').addEventListener('submit', async (e) => {
             localStorage.setItem('refreshToken', data.refreshToken);
             localStorage.setItem('user', JSON.stringify(data.user));
 
-            showMessage('loginMessage', '✓ Login successful! Redirecting...', 'success');
+            showMessage('loginMessage', 'Inicio de sesión exitoso', 'success');
             
             // Redirigir a la página principal después de 1 segundo
             setTimeout(() => {
                 window.location.href = '/boards.html';
             }, 1000);
         } else {
-            showMessage('loginMessage', data.error || 'Login failed', 'error');
+            showMessage('loginMessage', data.error || 'Inicio de sesión fallido', 'error');
         }
     } catch (error) {
         console.error('Error:', error);
-        showMessage('loginMessage', 'Connection error. Please try again.', 'error');
+        showMessage('loginMessage', 'Error de conexión, intenta de nuevo!', 'error');
     }
 });
 
@@ -138,7 +138,7 @@ document.getElementById('register').addEventListener('submit', async (e) => {
 
     // Validación del lado del cliente
     if (formData.password !== formData.confirmPassword) {
-        showMessage('registerMessage', 'Passwords do not match!', 'error');
+        showMessage('registerMessage', 'Contraseñas no coinciden', 'error');
         return;
     }
 
@@ -159,18 +159,18 @@ document.getElementById('register').addEventListener('submit', async (e) => {
             localStorage.setItem('refreshToken', data.refreshToken);
             localStorage.setItem('user', JSON.stringify(data.user));
 
-            showMessage('registerMessage', '✓ Registration successful! Redirecting...', 'success');
+            showMessage('registerMessage', 'Registro exitoso', 'success');
             
             // Redirigir a la página principal después de 1 segundo
             setTimeout(() => {
                 window.location.href = '/boards.html';
             }, 1000);
         } else {
-            showMessage('registerMessage', data.error || 'Registration failed', 'error');
+            showMessage('registerMessage', data.error || 'Registro fallido', 'error');
         }
     } catch (error) {
         console.error('Error:', error);
-        showMessage('registerMessage', 'Connection error. Please try again.', 'error');
+        showMessage('registerMessage', 'Error de conexión, intenta de nuevo!', 'error');
     }
 });
 
