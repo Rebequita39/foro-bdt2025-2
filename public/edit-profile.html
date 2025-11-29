@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Perfil - Foro Galgo Diva</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="page-container">
+        <div class="form-window">
+            <div class="form-window-header">[ Editar Perfil ]</div>
+            <div class="form-window-content">
+                <form id="editProfileForm">
+                    <div class="form-group">
+                        <label for="username">Nombre de Usuario:</label>
+                        <input type="text" id="username" name="username" minlength="3" maxlength="20">
+                        <small>3-20 caracteres (dejar vacío para no cambiar)</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email">
+                        <small>Dejar vacío para no cambiar</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="avatar">URL de Avatar:</label>
+                        <input type="url" id="avatar" name="avatar" placeholder="https://ejemplo.com/avatar.jpg">
+                        <small>URL directa de tu imagen de avatar</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bio">Bio:</label>
+                        <textarea id="bio" name="bio" placeholder="Cuéntanos sobre ti..."></textarea>
+                        <small>Opcional</small>
+                    </div>
+
+                    <button type="submit" class="btn-primary">★ Guardar Cambios ★</button>
+                </form>
+                <div id="profileMessage" class="message"></div>
+
+                <hr style="margin: 30px 0; border: 1px solid #ddd;">
+
+                <!-- Cambiar contraseña -->
+                <h3 style="color: #3a00a4; margin-bottom: 15px;">Cambiar Contraseña</h3>
+                <form id="changePasswordForm">
+                    <div class="form-group">
+                        <label for="currentPassword">Contraseña Actual:</label>
+                        <input type="password" id="currentPassword" name="currentPassword" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="newPassword">Nueva Contraseña:</label>
+                        <input type="password" id="newPassword" name="newPassword" minlength="6" required>
+                        <small>Mínimo 6 caracteres</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirmNewPassword">Confirmar Nueva Contraseña:</label>
+                        <input type="password" id="confirmNewPassword" name="confirmNewPassword" required>
+                    </div>
+
+                    <button type="submit" class="btn-primary">★ Cambiar Contraseña ★</button>
+                </form>
+                <div id="passwordMessage" class="message"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 Foro Galgo Diva</p>
+    </footer>
+
+    <script src="components/navbar.js"></script>
+    <script src="js/edit-profile.js"></script>
+</body>
+</html>

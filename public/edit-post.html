@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Publicación - Foro Galgo Diva</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="page-container">
+        <div class="form-window">
+            <div class="form-window-header">[ Editar Publicación ]</div>
+            <div class="form-window-content">
+                <div id="loadingMessage" class="loading">Cargando publicación...</div>
+                
+                <form id="editPostForm" style="display: none;">
+                    <div class="form-group">
+                        <label for="title">Título:</label>
+                        <input type="text" id="title" name="title" minlength="3" maxlength="200" required>
+                        <small>3-200 caracteres</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="content">Contenido:</label>
+                        <textarea id="content" name="content" minlength="10" required></textarea>
+                        <small>Mínimo 10 caracteres</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="image_url">URL de Imagen (opcional):</label>
+                        <input type="url" id="image_url" name="image_url" placeholder="https://ejemplo.com/imagen.jpg">
+                        <small>URL directa de imagen</small>
+                    </div>
+
+                    <button type="submit" class="btn-primary">★ Guardar Cambios ★</button>
+                    <button type="button" onclick="window.history.back()" class="btn-primary" style="background: #999; margin-top: 10px;">← Cancelar</button>
+                </form>
+                <div id="editMessage" class="message"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 Foro Galgo Diva</p>
+    </footer>
+
+    <script src="components/navbar.js"></script>
+    <script src="js/edit-post.js"></script>
+</body>
+</html>

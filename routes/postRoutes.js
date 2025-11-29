@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const postController = require('../controllers/postController');
+const commentController = require('../controllers/commentController');
 const { authenticateToken } = require('../middleware/auth');
 
 // Rutas públicas
@@ -23,6 +24,17 @@ router.put('/:id',
 router.delete('/:id', 
   authenticateToken,
   postController.deletePost
+);
+
+// Rutas de comentarios
+router.post('/:post_id/comments',
+  authenticateToken,
+  commentController.createComment
+);
+
+router.delete('/comments/:id',
+  authenticateToken,
+  commentController.deleteComment
 );
 
 module.exports = router;

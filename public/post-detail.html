@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publicación - Foro Galgo Diva</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="page-container">
+        <div id="postDetail" class="loading">Cargando publicación...</div>
+
+        <!-- Sección de comentarios -->
+        <div id="commentsSection" style="display: none;">
+            <div class="form-window" style="margin-top: 30px;">
+                <div class="form-window-header">[ Comentarios ]</div>
+                <div class="form-window-content">
+                    <div id="commentsList"></div>
+                    
+                    <!-- Formulario para nuevo comentario (solo si está logueado) -->
+                    <div id="newCommentForm" style="display: none; margin-top: 20px; padding-top: 20px; border-top: 2px solid #ddd;">
+                        <form id="createCommentForm">
+                            <div class="form-group">
+                                <label for="commentContent">Agregar comentario:</label>
+                                <textarea id="commentContent" name="content" placeholder="Escribe tu comentario..." minlength="3" required></textarea>
+                                <small>Mínimo 3 caracteres</small>
+                            </div>
+                            <button type="submit" class="btn-primary">★ Comentar ★</button>
+                        </form>
+                        <div id="commentMessage" class="message"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Botones de acción (editar/eliminar) -->
+        <div id="postActions" style="display: none; margin-top: 20px; text-align: center;">
+            <button onclick="editPost()" class="btn-primary" style="width: auto; display: inline-block; margin: 0 10px;">✏ Editar</button>
+            <button onclick="deletePost()" class="btn-primary" style="width: auto; display: inline-block; margin: 0 10px; background: #ff6b6b;">🗑 Eliminar</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 Foro Galgo Diva</p>
+    </footer>
+
+    <script src="components/navbar.js"></script>
+    <script src="js/post-detail.js"></script>
+</body>
+</html>

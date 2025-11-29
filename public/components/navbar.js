@@ -7,6 +7,9 @@ function createNavbar() {
     <nav class="navbar">
       <div class="nav-container">
         <div class="nav-left">
+         <a href="/boards.html">
+            <img src="media/ezgif-641ad425197d2838.gif" style="width:60px"/>
+         </a>
           <a href="/boards.html" class="nav-logo">Foro Galgo Diva</a>
           <a href="/boards.html" class="nav-link">Hilos</a>
           ${user ? '<a href="/create-post.html" class="nav-link">Nueva Publicación</a>' : ''}
