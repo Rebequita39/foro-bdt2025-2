@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Perfil - Foro Galgo Diva</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="page-container">
+        <div class="profile-card">
+            <div class="profile-header">
+                <img id="profileAvatar" src="https://web.archive.org/web/20091027143946im_/http://www.geocities.com/mailbaby2002/roseglitter.gif" alt="Avatar" class="profile-avatar">
+                <h2 id="profileUsername">Cargando...</h2>
+                <span id="profileRole" style="color: #fff; font-size: 12px;">USUARIO</span>
+            </div>
+            <div class="profile-content">
+                <div class="profile-info">
+                    <div class="profile-label">Bio:</div>
+                    <div class="profile-value" id="profileBio">-</div>
+
+                    <div class="profile-label">Miembro desde:</div>
+                    <div class="profile-value" id="profileCreated">-</div>
+                </div>
+
+                <div class="profile-info">
+                    <div class="profile-label">Estadísticas:</div>
+                    <div class="profile-value">
+                        <strong id="totalPosts">0</strong> publicaciones • 
+                        <strong id="totalComments">0</strong> comentarios • 
+                        <strong id="boardsParticipated">0</strong> hilos participados
+                    </div>
+                </div>
+
+                <button onclick="window.location.href='edit-profile.html'" class="btn-primary">Editar Perfil</button>
+            </div>
+        </div>
+
+        <div class="form-window">
+            <div class="form-window-header">[  Publicaciones Recientes  ]</div>
+            <div class="form-window-content">
+                <div id="userPosts" class="loading">Cargando publicaciones...</div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 Foro Galgo Diva</p>
+    </footer>
+
+    <script src="components/navbar.js"></script>
+    <script src="js/profile.js"></script>
+</body>
+</html>

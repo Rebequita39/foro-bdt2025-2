@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hilos - Foro Galgo Diva</title>
+    <title>Foro Galgo Diva</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <div class="page-container">
         <header style="margin-top: 20px;">
-            <h1>★ Hilos ★</h1>
-            <marquee>Explora los hilos! ★ Únete a la conversación! ★</marquee>
+            <h1 id="boardTitle">★ Publicaciones ★</h1>
+            <marquee id="boardDescription">Cargando...</marquee>
         </header>
 
-        <div id="boardsList" class="loading">Loading boards...</div>
+        <div id="postsList" class="loading">Cargando publicaciones...</div>
     </div>
 
     <footer>
@@ -21,6 +21,6 @@
     </footer>
 
     <script src="components/navbar.js"></script>
-    <script src="js/boards.js"></script>
+    <script src="js/posts.js"></script>
 </body>
 </html>
