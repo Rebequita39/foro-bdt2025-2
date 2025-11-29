@@ -1,6 +1,28 @@
 const Post = require('../models/Post');
 const Board = require('../models/Board');
-const { getFileUrl, deleteFile } = require('../middleware/upload');
+
+// Función para validar URL de imagen
+const isValidImageUrl = (url) => {
+  if (!url) return true; // URL vacía es válida
+  
+  try {
+    const urlObj = new URL(url);
+    const validExtensions = ['.jpg', '.jpeg', '.png', '.gif', '.webp', '.bmp'];
+    const pathname = urlObj.pathname.toLowerCase();
+    
+    return validExtensions.some(ext => pathname.endsWith(ext)) || 
+           pathname.includes('/images/') ||
+           urlObj.hostname.includes('imgur.com') ||
+           urlObj.hostname.includes('i.redd.it') ||
+           urlObj.hostname.includes('media.giphy.com') ||
+           urlObj.hostname.includes('tenor.com') ||
+           urlObj.hostname.includes('pinimg.com') ||
+           urlObj.hostname.includes('discordapp.com') ||
+           urlObj.hostname.includes('discordapp.net');
+  } catch (e) {
+    return false;
+  }
+};
 
 // Obtener todos los posts
 const getAllPosts = async (req, res) => {
@@ -66,41 +88,38 @@ const getPostById = async (req, res) => {
 // Crear nuevo post
 const createPost = async (req, res) => {
   try {
-    const { title, content, board_id } = req.body;
+    const { title, content, board_id, image_url } = req.body;
     const user_id = req.user.id;
-    const image = req.file ? req.file.filename : null;
 
     // Validaciones
     if (!title || !content || !board_id) {
-      // Si hay imagen, eliminarla
-      if (image) deleteFile(image);
-      
       return res.status(400).json({ 
         error: 'Título, contenido y board son requeridos.' 
       });
     }
 
     if (title.length < 3 || title.length > 200) {
-      if (image) deleteFile(image);
-      
       return res.status(400).json({ 
         error: 'El título debe tener entre 3 y 200 caracteres.' 
       });
     }
 
     if (content.length < 10) {
-      if (image) deleteFile(image);
-      
       return res.status(400).json({ 
         error: 'El contenido debe tener al menos 10 caracteres.' 
+      });
+    }
+
+    // Validar URL de imagen si se proporcionó
+    if (image_url && !isValidImageUrl(image_url)) {
+      return res.status(400).json({ 
+        error: 'La URL de imagen no es válida. Debe ser una URL directa a una imagen (jpg, png, gif, webp).' 
       });
     }
 
     // Verificar que el board existe
     const board = await Board.findById(board_id);
     if (!board) {
-      if (image) deleteFile(image);
-      
       return res.status(404).json({ 
         error: 'Board no encontrado.' 
       });
@@ -112,7 +131,7 @@ const createPost = async (req, res) => {
       content,
       user_id,
       board_id,
-      image
+      image_url: image_url || null
     });
 
     const newPost = await Post.findById(postId);
@@ -125,10 +144,6 @@ const createPost = async (req, res) => {
 
   } catch (error) {
     console.error('Error al crear post:', error);
-    
-    // Eliminar imagen si hubo error
-    if (req.file) deleteFile(req.file.filename);
-    
     res.status(500).json({ 
       error: 'Error al crear post.' 
     });
@@ -139,15 +154,12 @@ const createPost = async (req, res) => {
 const updatePost = async (req, res) => {
   try {
     const { id } = req.params;
-    const { title, content } = req.body;
+    const { title, content, image_url } = req.body;
     const user_id = req.user.id;
-    const newImage = req.file ? req.file.filename : null;
 
     // Verificar que el post existe
     const post = await Post.findById(id);
     if (!post) {
-      if (newImage) deleteFile(newImage);
-      
       return res.status(404).json({ 
         error: 'Post no encontrado.' 
       });
@@ -158,8 +170,6 @@ const updatePost = async (req, res) => {
     const isAdminOrMod = ['admin', 'moderator'].includes(req.user.role);
 
     if (!isOwner && !isAdminOrMod) {
-      if (newImage) deleteFile(newImage);
-      
       return res.status(403).json({ 
         error: 'No tienes permisos para editar este post.' 
       });
@@ -167,31 +177,29 @@ const updatePost = async (req, res) => {
 
     // Validaciones
     if (title && (title.length < 3 || title.length > 200)) {
-      if (newImage) deleteFile(newImage);
-      
       return res.status(400).json({ 
         error: 'El título debe tener entre 3 y 200 caracteres.' 
       });
     }
 
     if (content && content.length < 10) {
-      if (newImage) deleteFile(newImage);
-      
       return res.status(400).json({ 
         error: 'El contenido debe tener al menos 10 caracteres.' 
       });
     }
 
-    // Si hay nueva imagen, eliminar la anterior
-    if (newImage && post.image) {
-      deleteFile(post.image);
+    // Validar URL de imagen si se proporcionó
+    if (image_url && !isValidImageUrl(image_url)) {
+      return res.status(400).json({ 
+        error: 'La URL de imagen no es válida. Debe ser una URL directa a una imagen.' 
+      });
     }
 
     // Actualizar post
     const updatedPost = await Post.update(id, {
       title,
       content,
-      image: newImage || post.image
+      image_url: image_url !== undefined ? image_url : post.image
     });
 
     res.json({
@@ -202,9 +210,6 @@ const updatePost = async (req, res) => {
 
   } catch (error) {
     console.error('Error al actualizar post:', error);
-    
-    if (req.file) deleteFile(req.file.filename);
-    
     res.status(500).json({ 
       error: 'Error al actualizar post.' 
     });
@@ -235,12 +240,7 @@ const deletePost = async (req, res) => {
       });
     }
 
-    // Eliminar imagen si existe
-    if (post.image) {
-      deleteFile(post.image);
-    }
-
-    // Eliminar post
+    // Eliminar post (las URLs externas no necesitan ser eliminadas)
     await Post.delete(id);
 
     res.json({

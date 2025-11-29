@@ -3,14 +3,14 @@ const { query } = require('../config/database');
 class Post {
   // Crear post
   static async create(postData) {
-    const { title, content, user_id, board_id, image } = postData;
+    const { title, content, user_id, board_id, image_url } = postData;
     
     const sql = `
       INSERT INTO posts (title, content, user_id, board_id, image, created_at, updated_at)
       VALUES (?, ?, ?, ?, ?, NOW(), NOW())
     `;
     
-    const result = await query(sql, [title, content, user_id, board_id, image || null]);
+    const result = await query(sql, [title, content, user_id, board_id, image_url || null]);
     return result.insertId;
   }
 
@@ -63,7 +63,7 @@ class Post {
 
   // Actualizar post
   static async update(id, postData) {
-    const { title, content, image } = postData;
+    const { title, content, image_url } = postData;
     
     const sql = `
       UPDATE posts
@@ -74,7 +74,7 @@ class Post {
       WHERE id = ?
     `;
     
-    await query(sql, [title, content, image, id]);
+    await query(sql, [title, content, image_url, id]);
     return await this.findById(id);
   }
 
