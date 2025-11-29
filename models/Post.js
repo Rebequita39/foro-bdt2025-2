@@ -35,6 +35,10 @@ class Post {
 
   // Obtener todos los posts con paginación
   static async findAll(limit = 50, offset = 0) {
+    // Convertir a números enteros y validar
+    const parsedLimit = Math.max(1, Math.min(parseInt(limit, 10) || 50, 100));
+    const parsedOffset = Math.max(0, parseInt(offset, 10) || 0);
+    
     const sql = `
       SELECT 
         p.id,
@@ -55,10 +59,10 @@ class Post {
       INNER JOIN users u ON p.user_id = u.id
       INNER JOIN boards b ON p.board_id = b.id
       ORDER BY p.created_at DESC
-      LIMIT ? OFFSET ?
+      LIMIT ${parsedLimit} OFFSET ${parsedOffset}
     `;
     
-    return await query(sql, [limit, offset]);
+    return await query(sql, []);
   }
 
   // Actualizar post
@@ -97,6 +101,11 @@ class Post {
 
   // Obtener posts por usuario
   static async findByUser(userId, limit = 50, offset = 0) {
+    // Convertir a números enteros y validar
+    const parsedUserId = parseInt(userId, 10);
+    const parsedLimit = Math.max(1, Math.min(parseInt(limit, 10) || 50, 100));
+    const parsedOffset = Math.max(0, parseInt(offset, 10) || 0);
+    
     const sql = `
       SELECT 
         p.id,
@@ -111,14 +120,17 @@ class Post {
       INNER JOIN boards b ON p.board_id = b.id
       WHERE p.user_id = ?
       ORDER BY p.created_at DESC
-      LIMIT ? OFFSET ?
+      LIMIT ${parsedLimit} OFFSET ${parsedOffset}
     `;
     
-    return await query(sql, [userId, limit, offset]);
+    return await query(sql, [parsedUserId]);
   }
 
   // Buscar posts por término
   static async search(searchTerm, limit = 20) {
+    // Convertir a número entero y validar
+    const parsedLimit = Math.max(1, Math.min(parseInt(limit, 10) || 20, 100));
+    
     const sql = `
       SELECT 
         p.id,
@@ -132,11 +144,11 @@ class Post {
       INNER JOIN boards b ON p.board_id = b.id
       WHERE p.title LIKE ? OR p.content LIKE ?
       ORDER BY p.created_at DESC
-      LIMIT ?
+      LIMIT ${parsedLimit}
     `;
     
     const term = `%${searchTerm}%`;
-    return await query(sql, [term, term, limit]);
+    return await query(sql, [term, term]);
   }
 
   // Obtener comentarios de un post

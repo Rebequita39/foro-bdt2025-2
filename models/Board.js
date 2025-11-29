@@ -71,6 +71,12 @@ class Board {
 
   // Obtener posts de un board
   static async getPosts(boardId, limit = 50, offset = 0) {
+    // Convertir a números enteros y validar
+    const parsedLimit = Math.max(1, Math.min(parseInt(limit, 10) || 50, 100));
+    const parsedOffset = Math.max(0, parseInt(offset, 10) || 0);
+    const parsedBoardId = parseInt(boardId, 10);
+    
+    // Usar template string con valores directos para LIMIT/OFFSET
     const sql = `
       SELECT 
         p.id,
@@ -89,10 +95,10 @@ class Board {
       INNER JOIN users u ON p.user_id = u.id
       WHERE p.board_id = ?
       ORDER BY p.created_at DESC
-      LIMIT ? OFFSET ?
+      LIMIT ${parsedLimit} OFFSET ${parsedOffset}
     `;
     
-    return await query(sql, [boardId, limit, offset]);
+    return await query(sql, [parsedBoardId]);
   }
 }
 
