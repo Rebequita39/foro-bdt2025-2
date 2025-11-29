@@ -27,15 +27,13 @@ app.get('/api/health', (req, res) => {
 
 // Importar rutas
 const authRoutes = require('./routes/authRoutes');
-// const userRoutes = require('./routes/userRoutes');
-// const boardRoutes = require('./routes/boardRoutes');
-// const postRoutes = require('./routes/postRoutes');
+const boardRoutes = require('./routes/boardRoutes');
+const postRoutes = require('./routes/postRoutes');
 
 // Usar rutas
 app.use('/api/auth', authRoutes);
-// app.use('/api/users', userRoutes);
-// app.use('/api/boards', boardRoutes);
-// app.use('/api/posts', postRoutes);
+app.use('/api/boards', boardRoutes);
+app.use('/api/posts', postRoutes);
 
 // Manejo de errores 404
 app.use((req, res) => {
