@@ -1,24 +1,28 @@
-/* Kawaii Y2K Forum Style */
+/* === PIXEL FONT IMPORT === */
 @font-face {
-  font-family: 'PixelFont';
-  src: url('https://fonts.cdnfonts.com/s/16704/ARCADECLASSIC.woff') format('woff');
+  font-family: 'Zpix';
+  src: url('media/retro-pixel-cute-mono.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
+/* Override all fonts site-wide */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Zpix', monospace !important;
 }
 
 body {
-  font-family: 'Courier New', 'PixelFont', monospace;
   background-color: #ffe6f0;
-  background-image: 
-    repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,182,193,.1) 10px, rgba(255,182,193,.1) 20px);
+  background-image: url("media/polkadotsbg.jpeg"); 
+  background-repeat: repeat; 
+  background-size: auto; 
   color: #4d004d;
   min-height: 100vh;
   padding: 20px;
-  cursor: url('data:image/x-icon;base64,AAACAAEAICAAAAAAAACoEAAAFgAAACgAAAAgAAAAQAAAAAEAIAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAAAAUAAAAGAAAAAwAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAMAAAAGAAAABQAAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJAAAAEgAAABUAAAAPAAAABgAAAAMAAAABAAAAAQAAAAMAAAAGAAAADwAAABUAAAASAAAACQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAjAAAALAAAACUAAAAVAAAADwAA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ACUAAAAMAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKdk3P/u3v3/7t79/6Zm3v8AAAAoAAAAFgAAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAO7d/v/u3f7/AAAAEwAAABMAAAAKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAApmbe/6Zm3v8AAAAFAAAABQAAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////////////////////////////////////////////z/P//8PD///gB///4Af//+AH///gB///4Af//8AD//+AAf//AAD//gAAf//4H///+B////w////+f////n////////////////////////////////////////////8='), auto;
+  cursor: url('data:image/x-icon;base64,AAACAAEAICAAAAAAAACoEAAAFgAAACgAAAAgAAAAQAAAAAEAIAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAAAAUAAAAGAAAAAwAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAMAAAAGAAAABQAAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJAAAAEgAAABUAAAAPAAAABgAAAAMAAAABAAAAAQAAAAMAAAAGAAAADwAAABUAAAASAAAACQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAjAAAALAAAACUAAAAVAAAADwAAAAgAAAAIAAAADwAAABUAAAAlAAAALAAAACMAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAACkAAAA8AAAAPwAAAC8AAAAlAAAAHAAAABwAAAAlAAAALwAAAD8AAAA8AAAAKQAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKpn2/+mZt3/AAAAJQAAAD4AAABOAAAARQAAAD8AAAA4AAAAOAAAAD+mZt7/pmbe/wAAAD4AAAAlAAAACQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAtpvM//Hb//+kZd3/pmbd/wAAAFQAAABRAAAATgAAAEymZt7/pmbe/+7e/f/l0e//AAAAOwAAAB8AAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8N7///HZ///u3P//pmfe/6dn2/+mZt7/pWXg/+/d/v/02///7t34/wAAAFUAAAA5AAAAHQAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACQYLf/3K7//9iu///w3P//7dz///Dd/v/v3f//2q7//9iu//+mZt7/AAAAVQAAADsAAAAfAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA6Zm3f/w1P7/pmXg/9Og9//asP7/2LD+/7qE5f+maNr/8Nj//6Zm3v8AAABVAAAAQgAAACgAAAAMAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAAAMpmbd/+3e/v+mZt3/7dv+/6Zm3f+mZtz/7979/6No1//u3f//pmbe/wAAAFUAAABLAAAAOAAAAB8AAAAMAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAACwAAAB6oaN//7t3//9uu/f/t3f//1bH2/9ex+f/t3v7/3LH9/+7d//+mZt7/AAAAVAAAAFAAAABHAAAANAAAAB4AAAALAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAcAAAAXpmbd/+7d///asP7/pmbe/+7d//+mZt7/pmbd/+3d//+mZt7/2K///+7d//+mZt7/AAAATAAAAEkAAABAAAAALQAAABcAAAAHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACadn3v/u3f//2q///6Zm3v/t3P//27H+/7V+4f+3fuX/2rH8/+3Z//+mZt7/2q///+3d//+mZt7/AAAAOAAAADUAAAAsAAAAGQAAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACmaNv/7t3//9ix/f/asP7/263//6Vp3P+kZ9v/7t3///Dg/v+kZ9v/pWnb/9ut///asP3/2rD+/+7d//+mZt7/AAAAHAAAABkAAAAQAAAABwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAqmfd/6hm3f+lZ93/++D//+7d///u3f//7t3+/9qv//+gc8T/pGXe/9qw/v/u3f//7t3//+3e/f/53v//pmbe/6Zm3v+mZt7/AAAACAAAAAUAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAQAAAAGlZd3/8N/+/6Vn2v+hadP/8N3//6Zm3v8AAAA4AAAAHAAAAAoAAAABAAAAAQAAAAEAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAObT8P/t3P//2q///9qu///u3P7/9OT6/wAAACUAAAAMAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKdk3P/u3v3/7t79/6Zm3v8AAAAoAAAAFgAAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAO7d/v/u3f7/AAAAEwAAABMAAAAKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAApmbe/6Zm3v8AAAAFAAAABQAAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////////////////////////////////////////////z/P//8PD///gB///4Af//+AH///gB///4Af//8AD//+AAf//AAD//gAAf//4H///+B////w////+f////n////////////////////////////////////////////8='), auto;
 }
 
 .page-wrapper {
@@ -27,17 +31,17 @@ body {
   margin: 0 auto;
 }
 
-/* Header */
+/* HEADER */
 header {
   text-align: center;
   padding: 30px 20px;
-  background-image: url('https://i.pinimg.com/736x/eb/c2/81/ebc281a3cdcfd1ec05ba5eef7daa3aac.jpg');
+  background-image: url('media/Plaid.jpeg');
   background-size: cover;
   background-position: center;
   border: 3px solid #ae9797;
   box-shadow: 
-    inset -3px -3px 0 #6a5acd,
-    inset 3px 3px 0 #ffffff,
+    inset -3px -3px 0 #5b4238,
+    inset 3px 3px 0 #fcfae5,
     0 8px 16px rgba(0,0,0,0.2);
   margin-bottom: 30px;
 }
@@ -45,19 +49,18 @@ header {
 header h1 {
   margin: 0;
   font-size: 3em;
-  color: #ff1493;
+  color: #795e53;
   text-shadow: 
-    3px 3px 0 #fff,
-    -1px -1px 0 #000,
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
-    1px 1px 0 #000;
+    -1px -1px 0 #f199c5,
+    1px -1px 0 #f199c5,
+    -1px 1px 0 #f199c5,
+    1px 1px 0 #f199c5;
   letter-spacing: 3px;
 }
 
 marquee {
-  background: linear-gradient(90deg, #ff69b4, #ff1493, #ff69b4);
-  color: #fff;
+  background: linear-gradient(90deg, #f199c5, #ffa2dd, #ffa2dd);
+  color: #fcfae5;
   font-weight: bold;
   padding: 8px;
   border: 2px solid #c71585;
@@ -66,96 +69,83 @@ marquee {
   font-size: 1.1em;
 }
 
-/* Stickers decorativos */
+/* Stickers */
 .sticker {
   position: absolute;
   z-index: 9999;
   pointer-events: none;
-
 }
 
-  .container {
-      display: flex;
-      padding: 30px;
-      gap: 20px;
-      justify-content: center;
-    }
+.container {
+  display: flex;
+  padding: 30px;
+  gap: 20px;
+  justify-content: center;
+}
 
 @keyframes float {
   0%, 100% { transform: translateY(0px) rotate(-5deg); }
   50% { transform: translateY(-10px) rotate(5deg); }
 }
 
-/* Window-style form containers - EXACTO como tu website */
+/* === WINDOWS 98 FORM === */
 .form-container {
   display: inline-flex;
   flex-direction: column;
-  background: #fff;
+  background: #fcfae5;
   position: relative;
   width: 600px;
   margin: 0 auto;
-  
-  /* outer black border */
   border: 2px solid #ae9797;
-  
-  /* 3d bevel */
   box-shadow:
-    inset -2px -2px 0 #6a5acd,
-    inset 2px 2px 0 #ffffff;
+    inset -2px -2px 0 #5b4238,
+    inset 2px 2px 0 #fcfae5;
 }
 
-/* Title bar - EXACTO como tu website */
 .form-container h2 {
   background: #ffa2dd;
-  color: #3a00a4;
+  color: #5b4238;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 18px; /* 16px → 18px */
   padding: 4px 8px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  user-select: none;
   margin: 0;
-  
   border-bottom: 2px solid #c55da0;
   box-shadow:
-    inset -2px -2px 0 #6a5acd,
-    inset 2px 2px 0 #fff;
+    inset -2px -2px 0 #5b4238,
+    inset 2px 2px 0 #fcfae5;
 }
 
-/* Botón de cerrar en title bar */
 .form-container h2::after {
   content: '×';
-  width: 16px;
-  height: 16px;
+  width: 18px; /* 16px → 18px */
+  height: 18px; /* 16px → 18px */
   border: 1px solid #000;
-  background: #fff;
-  font-size: 12px;
-  line-height: 14px;
+  background: #fcfae5;
+  font-size: 14px; /* 12px → 14px */
+  line-height: 16px; /* 14px → 16px */
   text-align: center;
   cursor: pointer;
-  
   box-shadow:
-    inset -1px -1px 0 #6a5acd,
-    inset 1px 1px 0 #fff;
+    inset -1px -1px 0 #5b4238,
+    inset 1px 1px 0 #fcfae5;
 }
 
-/* Window content - EXACTO como tu website */
 .form-container form {
   flex: 1;
   padding: 20px;
-  font-size: 14px;
+  font-size: 16px; /* 14px → 16px */
   color: #333;
   white-space: normal;
   word-wrap: break-word;
   overflow-wrap: break-word;
-  
-  border-top: none;
   border: 1px solid #000;
   box-shadow:
-    inset -1px -1px 0 #6a5acd,
-    inset 1px 1px 0 #fff;
-  background: #fff;
+    inset -1px -1px 0 #5b4238,
+    inset 1px 1px 0 #fcfae5;
+  background: #fcfae5;
 }
 
 .form-group {
@@ -164,10 +154,10 @@ marquee {
 
 .form-group label {
   display: block;
-  color: #3a00a4;
+  color: #5b4238;
   font-weight: bold;
   margin-bottom: 6px;
-  font-size: 14px;
+  font-size: 16px; /* 14px → 16px */
 }
 
 .form-group input {
@@ -175,9 +165,8 @@ marquee {
   padding: 10px;
   border: 2px solid #5a36a2;
   background: linear-gradient(180deg, white, #e7c2d9 40%, #d69aad);
-  font-family: 'Courier New', monospace;
-  font-size: 14px;
-  color: #3a00a4;
+  font-size: 16px; /* 14px → 16px */
+  color: #5b4238;
   box-shadow: 4px 5px 4px #da97a9;
 }
 
@@ -190,48 +179,34 @@ marquee {
 .form-group small {
   display: block;
   color: #666;
-  font-size: 12px;
+  font-size: 14px; /* 12px → 14px */
   margin-top: 5px;
   font-style: italic;
 }
 
-/* Buttons - estilo Windows 98 kawaii */
+/* Buttons */
 .btn-primary {
   width: 100%;
   padding: 10px;
   background: #edc1d6;
-  border-top: 2px solid #ffffff;
-  border-left: 2px solid #ffffff;
-  border-right: 2px solid #6a5acd;
-  border-bottom: 2px solid #6a5acd;
+  border-top: 2px solid #fcfae5;
+  border-left: 2px solid #fcfae5;
+  border-right: 2px solid #5b4238;
+  border-bottom: 2px solid #5b4238;
   box-shadow: inset 1px 1px 0 0 white, inset -1px -1px 0 0 #d181b1;
-  color: #3a00a4;
+  color: #5b4238;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 16px; /* 14px → 16px */
   cursor: pointer;
-  font-family: 'PixelFont', 'MS Sans Serif', sans-serif;
   margin-top: 10px;
   transition: all 0.1s;
 }
 
-.btn-primary:hover {
-  background: #f5d1e6;
-}
-
-.btn-primary:active {
-  border-top: 2px solid #6a5acd;
-  border-left: 2px solid #6a5acd;
-  border-right: 2px solid #ffffff;
-  border-bottom: 2px solid #ffffff;
-  box-shadow: inset -1px -1px 0 0 white, inset 1px 1px 0 0 #d181b1;
-}
-
-/* Switch form links */
 .switch-form {
   text-align: center;
   margin-top: 15px;
-  color: #3a00a4;
-  font-size: 13px;
+  color: #5b4238;
+  font-size: 15px; /* 13px → 15px */
 }
 
 .switch-form a {
@@ -241,12 +216,6 @@ marquee {
   font-weight: bold;
 }
 
-.switch-form a:hover {
-  color: #c71585;
-  text-shadow: 0 0 5px rgba(255,20,147,0.5);
-}
-
-/* Messages dentro del window */
 .message {
   margin: 15px 20px;
   padding: 12px;
@@ -254,7 +223,7 @@ marquee {
   text-align: center;
   font-weight: bold;
   display: none;
-  font-size: 14px;
+  font-size: 16px; /* 14px → 16px */
 }
 
 .message.success {
@@ -283,10 +252,9 @@ marquee {
 }
 
 
-
-/* Navbar */
+/* NAVBAR */
 .navbar {
-  background: linear-gradient(180deg, #ffa2dd, #ff69b4);
+  background: linear-gradient(180deg, #ffa2dd, #ffa2dd);
   border-bottom: 3px solid #ae9797;
   box-shadow:
     inset -2px -2px 0 #c71585,
@@ -315,7 +283,7 @@ marquee {
 }
 
 .nav-logo {
-  color: #fff;
+  color: #fcfae5;
   font-size: 1.5em;
   font-weight: bold;
   text-decoration: none;
@@ -323,7 +291,7 @@ marquee {
 }
 
 .nav-link {
-  color: #fff;
+  color: #fcfae5;
   text-decoration: none;
   padding: 8px 15px;
   border-radius: 5px;
@@ -332,7 +300,6 @@ marquee {
   background: none;
   border: none;
   cursor: pointer;
-  font-family: 'PixelFont', 'MS Sans Serif', sans-serif;
   font-size: 14px;
 }
 
@@ -342,7 +309,7 @@ marquee {
 }
 
 .nav-user {
-  color: #fff;
+  color: #fcfae5;
   font-weight: bold;
   padding: 8px 15px;
   background: rgba(0,0,0,0.2);
@@ -352,11 +319,11 @@ marquee {
 
 .nav-btn {
   background: #edc1d6;
-  color: #3a00a4;
+  color: #5b4238;
   border: 2px solid #ae9797;
   box-shadow: 
-    inset -1px -1px 0 #6a5acd,
-    inset 1px 1px 0 #ffffff;
+    inset -1px -1px 0 #5b4238,
+    inset 1px 1px 0 #fcfae5;
 }
 
 .nav-btn:hover {
@@ -366,38 +333,38 @@ marquee {
 
 .nav-btn:active {
   box-shadow: 
-    inset 1px 1px 0 #6a5acd,
-    inset -1px -1px 0 #ffffff;
+    inset 1px 1px 0 #5b4238,
+    inset -1px -1px 0 #fcfae5;
   transform: translateY(0);
 }
 
-/* Page Container */
+/* Layout */
 .page-container {
   max-width: 1000px;
   margin: 0 auto;
   padding: 20px;
 }
 
-/* Board Card */
+/* BOARDS */
 .board-card {
-  background: #fff;
+  background: #fcfae5;
   border: 2px solid #ae9797;
   box-shadow:
-    inset -2px -2px 0 #6a5acd,
-    inset 2px 2px 0 #ffffff;
+    inset -2px -2px 0 #5b4238,
+    inset 2px 2px 0 #fcfae5;
   margin-bottom: 20px;
   overflow: hidden;
 }
 
 .board-header {
   background: #ffa2dd;
-  color: #3a00a4;
+  color: #5b4238;
   padding: 12px 20px;
   font-weight: bold;
   border-bottom: 2px solid #c55da0;
   box-shadow:
-    inset -2px -2px 0 #6a5acd,
-    inset 2px 2px 0 #fff;
+    inset -2px -2px 0 #5b4238,
+    inset 2px 2px 0 #fcfae5;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -407,8 +374,8 @@ marquee {
   padding: 20px;
   border: 1px solid #000;
   box-shadow:
-    inset -1px -1px 0 #6a5acd,
-    inset 1px 1px 0 #fff;
+    inset -1px -1px 0 #5b4238,
+    inset 1px 1px 0 #fcfae5;
 }
 
 .board-description {
@@ -431,34 +398,34 @@ marquee {
   text-decoration: underline;
 }
 
-/* Post Card */
+/* POSTS */
 .post-card {
-  background: #fff;
+  background: #fcfae5;
   border: 2px solid #ae9797;
   box-shadow:
-    inset -2px -2px 0 #6a5acd,
-    inset 2px 2px 0 #ffffff;
+    inset -2px -2px 0 #5b4238,
+    inset 2px 2px 0 #fcfae5;
   margin-bottom: 20px;
   overflow: hidden;
 }
 
 .post-header {
   background: #ffa2dd;
-  color: #3a00a4;
+  color: #5b4238;
   padding: 12px 20px;
   font-weight: bold;
   border-bottom: 2px solid #c55da0;
   box-shadow:
-    inset -2px -2px 0 #6a5acd,
-    inset 2px 2px 0 #fff;
+    inset -2px -2px 0 #5b4238,
+    inset 2px 2px 0 #fcfae5;
 }
 
 .post-content {
   padding: 20px;
   border: 1px solid #000;
   box-shadow:
-    inset -1px -1px 0 #6a5acd,
-    inset 1px 1px 0 #fff;
+    inset -1px -1px 0 #5b4238,
+    inset 1px 1px 0 #fcfae5;
 }
 
 .post-image {
@@ -480,34 +447,34 @@ marquee {
   font-weight: bold;
 }
 
-/* Form Styles */
+/* FORMS */
 .form-window {
-  background: #fff;
+  background: #fcfae5;
   border: 2px solid #ae9797;
   box-shadow:
-    inset -2px -2px 0 #6a5acd,
-    inset 2px 2px 0 #ffffff;
+    inset -2px -2px 0 #5b4238,
+    inset 2px 2px 0 #fcfae5;
   margin: 20px auto;
   max-width: 700px;
 }
 
 .form-window-header {
   background: #ffa2dd;
-  color: #3a00a4;
+  color: #5b4238;
   padding: 12px 20px;
   font-weight: bold;
   border-bottom: 2px solid #c55da0;
   box-shadow:
-    inset -2px -2px 0 #6a5acd,
-    inset 2px 2px 0 #fff;
+    inset -2px -2px 0 #5b4238,
+    inset 2px 2px 0 #fcfae5;
 }
 
 .form-window-content {
   padding: 30px;
   border: 1px solid #000;
   box-shadow:
-    inset -1px -1px 0 #6a5acd,
-    inset 1px 1px 0 #fff;
+    inset -1px -1px 0 #5b4238,
+    inset 1px 1px 0 #fcfae5;
 }
 
 textarea {
@@ -517,8 +484,7 @@ textarea {
   border: 1px solid #5a36a2;
   box-shadow: 4px 5px 4px #da97a9;
   background-image: linear-gradient(180deg, white, #e7c2d9 40%, #d69aad);
-  color: #3a00a4;
-  font-family: 'PixelFont', 'MS Sans Serif', sans-serif;
+  color: #5b4238;
   font-size: 14px;
   resize: vertical;
 }
@@ -528,33 +494,33 @@ textarea:focus {
   border: 2px solid #5a36a2;
 }
 
-/* Profile Card */
+/* PROFILE */
 .profile-card {
-  background: #fff;
+  background: #fcfae5;
   border: 2px solid #ae9797;
   box-shadow:
-    inset -2px -2px 0 #6a5acd,
-    inset 2px 2px 0 #ffffff;
+    inset -2px -2px 0 #5b4238,
+    inset 2px 2px 0 #fcfae5;
   margin: 20px auto;
   max-width: 600px;
 }
 
 .profile-header {
   background: #ffa2dd;
-  color: #3a00a4;
+  color: #5b4238;
   padding: 20px;
   text-align: center;
   border-bottom: 2px solid #c55da0;
   box-shadow:
-    inset -2px -2px 0 #6a5acd,
-    inset 2px 2px 0 #fff;
+    inset -2px -2px 0 #5b4238,
+    inset 2px 2px 0 #fcfae5;
 }
 
 .profile-avatar {
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  border: 3px solid #fff;
+  border: 3px solid #fcfae5;
   margin-bottom: 10px;
 }
 
@@ -562,8 +528,8 @@ textarea:focus {
   padding: 30px;
   border: 1px solid #000;
   box-shadow:
-    inset -1px -1px 0 #6a5acd,
-    inset 1px 1px 0 #fff;
+    inset -1px -1px 0 #5b4238,
+    inset 1px 1px 0 #fcfae5;
 }
 
 .profile-info {
@@ -571,7 +537,7 @@ textarea:focus {
 }
 
 .profile-label {
-  color: #3a00a4;
+  color: #5b4238;
   font-weight: bold;
   margin-bottom: 5px;
 }
@@ -592,26 +558,20 @@ textarea:focus {
   font-size: 1.5em;
 }
 
-/* Empty State */
+/* Empty */
 .empty-state {
   text-align: center;
   padding: 50px;
   color: #999;
 }
 
-.empty-state img {
-  width: 150px;
-  margin-bottom: 20px;
-  opacity: 0.5;
-}
-
 /* Footer */
 footer {
-  background: linear-gradient(180deg, #ffa2dd, #ff69b4);
-  color: #fff;
+  background:  #ffa2dd;
+  color: #5b4238;
   text-align: center;
   padding: 25px;
-  border: 3px solid #ae9797;
+  border: px solid #ae9797;
   box-shadow: 
     inset -2px -2px 0 #c71585,
     inset 2px 2px 0 #ffb6c1,
@@ -622,7 +582,8 @@ footer {
 footer p {
   margin-bottom: 15px;
   font-weight: bold;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+   font-size:1.2em;
+
 }
 
 footer img {
