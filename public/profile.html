@@ -10,12 +10,15 @@
     <div class="page-container">
         <div class="profile-card">
             <div class="profile-header">
-                <img id="profileAvatar" src="https://web.archive.org/web/20091027143946im_/http://www.geocities.com/mailbaby2002/roseglitter.gif" alt="Avatar" class="profile-avatar">
+                <img id="profileAvatar" src="https://web.archive.org/web/20091027143946im_/http://www.geocities.com/mailbaby2002/roseglitter.gif" class="profile-avatar">
                 <h2 id="profileUsername">Cargando...</h2>
                 <span id="profileRole" style="color: #fff; font-size: 12px;">USUARIO</span>
             </div>
             <div class="profile-content">
                 <div class="profile-info">
+                    <div class="profile-label">Correo:</div>
+                    <div class="profile-value" id="profileEmail">-</div>
+
                     <div class="profile-label">Bio:</div>
                     <div class="profile-value" id="profileBio">-</div>
 
@@ -24,7 +27,7 @@
                 </div>
 
                 <div class="profile-info">
-                    <div class="profile-label">Estadísticas:</div>
+                    <div class="profile-label"> Estadísticas:</div>
                     <div class="profile-value">
                         <strong id="totalPosts">0</strong> publicaciones • 
                         <strong id="totalComments">0</strong> comentarios • 
@@ -32,12 +35,12 @@
                     </div>
                 </div>
 
-                <button onclick="window.location.href='edit-profile.html'" class="btn-primary">Editar Perfil</button>
+                <button onclick="window.location.href='edit-profile.html'" class="btn-primary"> Editar Perfil</button>
             </div>
         </div>
 
         <div class="form-window">
-            <div class="form-window-header">[  Publicaciones Recientes  ]</div>
+            <div class="form-window-header">[ Publicaciones recientes ]</div>
             <div class="form-window-content">
                 <div id="userPosts" class="loading">Cargando publicaciones...</div>
             </div>
