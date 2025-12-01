@@ -12,6 +12,7 @@ function createNavbar() {
          </a>
           <a href="/boards.html" class="nav-logo">Foro Galgo Diva</a>
           <a href="/boards.html" class="nav-link">Hilos</a>
+          <a href="/users.html" class="nav-link">Usuarios</a>
           ${user ? '<a href="/create-post.html" class="nav-link">Nueva Publicación</a>' : ''}
         </div>
         <div class="nav-right">

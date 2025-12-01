@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuarios - Foro Galgo Diva</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="page-container">
+        <header style="margin-top: 20px;">
+            <h1>★ Usuarios ★</h1>
+            <marquee>Busca y conoce a otros usuarios del foro! ★</marquee>
+        </header>
+
+        <!-- Barra de búsqueda -->
+        <div class="form-window" style="margin-bottom: 30px;">
+            <div class="form-window-header">[ Buscar Usuario ]</div>
+            <div class="form-window-content">
+                <div class="form-group">
+                    <input type="text" id="searchInput" placeholder="Escribe el nombre de usuario..." style="font-size: 16px;">
+                    <small>Búsqueda en tiempo real - escribe al menos 2 caracteres</small>
+                </div>
+                <div id="searchResults"></div>
+            </div>
+        </div>
+
+        <!-- Tabs -->
+        <div style="display: flex; gap: 10px; margin-bottom: 20px;">
+            <button onclick="showTab('all')" id="tabAll" class="btn-primary" style="width: auto;">Todos</button>
+            <button onclick="showTab('top')" id="tabTop" class="btn-primary" style="width: auto; background: #d69aad;">Top Usuarios</button>
+        </div>
+
+        <!-- Lista de todos los usuarios -->
+        <div id="allUsersSection">
+            <div id="usersList" class="loading">Cargando usuarios...</div>
+        </div>
+
+        <!-- Top usuarios -->
+        <div id="topUsersSection" style="display: none;">
+            <div id="topUsersList" class="loading">Cargando usuarios destacados...</div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 Foro Galgo Diva</p>
+    </footer>
+
+    <script src="components/navbar.js"></script>
+    <script src="js/users.js"></script>
+</body>
+</html>
