@@ -70,16 +70,40 @@ class User {
   static async update(id, userData) {
     const { username, email, avatar, bio } = userData;
     
+    // Construir query dinámicamente solo con campos proporcionados
+    const updates = [];
+    const values = [];
+    
+    if (username !== undefined) {
+      updates.push('username = ?');
+      values.push(username);
+    }
+    if (email !== undefined) {
+      updates.push('email = ?');
+      values.push(email);
+    }
+    if (avatar !== undefined) {
+      updates.push('avatar = ?');
+      values.push(avatar);
+    }
+    if (bio !== undefined) {
+      updates.push('bio = ?');
+      values.push(bio);
+    }
+    
+    if (updates.length === 0) {
+      return await this.findById(id);
+    }
+    
+    values.push(id);
+    
     const sql = `
       UPDATE users
-      SET username = COALESCE(?, username),
-          email = COALESCE(?, email),
-          avatar = COALESCE(?, avatar),
-          bio = COALESCE(?, bio)
+      SET ${updates.join(', ')}
       WHERE id = ?
     `;
     
-    await query(sql, [username, email, avatar, bio, id]);
+    await query(sql, values);
     return await this.findById(id);
   }
 

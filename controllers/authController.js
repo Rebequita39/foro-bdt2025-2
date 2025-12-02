@@ -185,11 +185,11 @@ const getProfile = async (req, res) => {
 // Actualizar perfil
 const updateProfile = async (req, res) => {
   try {
-    const { username, email, bio } = req.body;
+    const { username, email, bio, avatar } = req.body;
     const userId = req.user.id;
 
     // Validar que al menos un campo esté presente
-    if (!username && !email && !bio) {
+    if (!username && !email && !bio && avatar === undefined) {
       return res.status(400).json({ 
         error: 'Debes proporcionar al menos un campo para actualizar.' 
       });
@@ -201,7 +201,7 @@ const updateProfile = async (req, res) => {
       
       if (username && username !== currentUser.username) {
         const existingUsername = await User.findByUsername(username);
-        if (existingUsername) {
+        if (existingUsername && existingUsername.id !== userId) {
           return res.status(400).json({ 
             error: 'El username ya está en uso.' 
           });
@@ -210,7 +210,7 @@ const updateProfile = async (req, res) => {
 
       if (email && email !== currentUser.email) {
         const existingEmail = await User.findByEmail(email);
-        if (existingEmail) {
+        if (existingEmail && existingEmail.id !== userId) {
           return res.status(400).json({ 
             error: 'El email ya está en uso.' 
           });
@@ -218,12 +218,15 @@ const updateProfile = async (req, res) => {
       }
     }
 
+    // Preparar datos para actualizar (solo campos presentes)
+    const updateData = {};
+    if (username) updateData.username = username;
+    if (email) updateData.email = email;
+    if (bio !== undefined) updateData.bio = bio;
+    if (avatar !== undefined) updateData.avatar = avatar;
+
     // Actualizar usuario
-    const updatedUser = await User.update(userId, {
-      username,
-      email,
-      bio
-    });
+    const updatedUser = await User.update(userId, updateData);
 
     res.json({
       message: 'Perfil actualizado exitosamente.',
@@ -264,7 +267,7 @@ const changePassword = async (req, res) => {
     }
 
     // Verificar contraseña actual
-    const user = await User.findById(userId);
+    const user = await User.findByUsername(req.user.username) || await User.findByEmail(req.user.email);
     const isPasswordValid = await User.verifyPassword(currentPassword, user.password);
     
     if (!isPasswordValid) {

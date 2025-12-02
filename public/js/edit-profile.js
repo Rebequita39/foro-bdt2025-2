@@ -47,6 +47,8 @@ document.getElementById('editProfileForm').addEventListener('submit', async (e) 
     return;
   }
 
+  console.log('Enviando datos:', formData); // Debug
+
   try {
     const response = await fetch('/api/auth/profile', {
       method: 'PUT',
@@ -58,9 +60,10 @@ document.getElementById('editProfileForm').addEventListener('submit', async (e) 
     });
 
     const data = await response.json();
+    console.log('Respuesta del servidor:', data); // Debug
 
     if (response.ok) {
-      // Actualizar localStorage con nuevo username si cambió
+      // Actualizar localStorage con nuevos datos si cambió username
       if (formData.username) {
         const user = JSON.parse(localStorage.getItem('user'));
         user.username = formData.username;
@@ -76,8 +79,8 @@ document.getElementById('editProfileForm').addEventListener('submit', async (e) 
       showMessage('profile', data.error || 'Error al actualizar', 'error');
     }
   } catch (error) {
-    console.error('Error:', error);
-    showMessage('profile', 'Error de conexión', 'error');
+    console.error('Error completo:', error);
+    showMessage('profile', 'Error de conexión: ' + error.message, 'error');
   }
 });
 
